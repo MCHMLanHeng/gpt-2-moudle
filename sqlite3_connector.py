@@ -7,7 +7,6 @@ def sql_add(answer,question):
     time = time[:-7]
 
     conn = sqlite3.connect('example.db')
-    print("成功连接到数据库")
 
     cursor = conn.cursor()
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
@@ -53,6 +52,6 @@ def sql_add(answer,question):
         row_num += 1
     try:
         conn.close()
-        print("已断开与数据库的连接")
+
     except sqlite3.ProgrammingError:
-        print("已断开与数据库的连接")
+        pass
